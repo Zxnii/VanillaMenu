@@ -4,7 +4,7 @@ plugins {
 }
 
 group = "wtf.zani"
-version = "1.0"
+version = "2.0"
 
 minecraft.version("1.8.9")
 
