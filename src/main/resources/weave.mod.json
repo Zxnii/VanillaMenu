@@ -1,0 +1,11 @@
+{
+    "mixinConfigs": [
+        "vanillamenu.mixins.json"
+    ],
+    "hooks": [
+        "wtf.zani.vanillamenu.hooks.VanillaMenuHook"
+    ],
+    "entrypoints": [
+        "wtf.zani.vanillamenu.VanillaMenu"
+    ]
+}

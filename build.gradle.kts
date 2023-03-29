@@ -10,10 +10,12 @@ minecraft.version("1.8.9")
 
 repositories {
     maven("https://jitpack.io")
+    maven("https://repo.spongepowered.org/maven/")
 }
 
 dependencies {
-    compileOnly("com.github.Weave-MC:Weave-Loader:0c09d7496f")
+    compileOnly("org.spongepowered:mixin:0.8.5")
+    compileOnly("com.github.Weave-MC:Weave-Loader:6a9e6a3245")
 }
 
 tasks.compileJava {
@@ -21,7 +23,5 @@ tasks.compileJava {
 }
 
 tasks.jar {
-    manifest.attributes(
-        "Weave-Entry" to "wtf.zani.vanillamenu.VanillaMenu"
-    )
+    destinationDirectory.set(File("${System.getProperty("user.home")}/.lunarclient/mods"))
 }
