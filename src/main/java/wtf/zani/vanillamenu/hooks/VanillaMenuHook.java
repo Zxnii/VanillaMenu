@@ -1,6 +1,6 @@
 package wtf.zani.vanillamenu.hooks;
 
-import club.maxstats.weave.loader.api.Hook;
+import net.weavemc.loader.api.Hook;
 import org.jetbrains.annotations.NotNull;
 import org.objectweb.asm.tree.ClassNode;
 import org.objectweb.asm.tree.InsnList;
