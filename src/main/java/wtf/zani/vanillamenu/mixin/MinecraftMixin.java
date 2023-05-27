@@ -11,7 +11,7 @@ import org.spongepowered.asm.mixin.injection.ModifyVariable;
 import wtf.zani.vanillamenu.VanillaMenu;
 
 @Mixin(Minecraft.class)
-public class MinecraftMixin {
+public abstract class MinecraftMixin {
     @Shadow
     public WorldClient theWorld;
 
