@@ -23,5 +23,5 @@ tasks.compileJava {
 }
 
 tasks.jar {
-    destinationDirectory.set(File("${System.getProperty("user.home")}/.lunarclient/mods"))
+    destinationDirectory.set(File("${System.getProperty("user.home")}/.weave/mods"))
 }

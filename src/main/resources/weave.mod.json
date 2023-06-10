@@ -3,7 +3,9 @@
         "vanillamenu.mixins.json"
     ],
     "hooks": [
-        "wtf.zani.vanillamenu.hooks.VanillaMenuHook"
+        "wtf.zani.vanillamenu.hooks.MinecraftHook",
+        "wtf.zani.vanillamenu.hooks.GuiScreenHook",
+        "wtf.zani.vanillamenu.hooks.SearchHook"
     ],
     "entrypoints": [
         "wtf.zani.vanillamenu.VanillaMenu"

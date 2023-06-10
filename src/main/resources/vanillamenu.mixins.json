@@ -2,6 +2,8 @@
     "compatibilityLevel": "JAVA_8",
     "package": "wtf.zani.vanillamenu.mixin",
     "mixins": [
+        "FontRendererMixin",
+        "GuiMainMenuMixin",
         "MinecraftMixin"
     ]
 }
