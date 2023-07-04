@@ -38,7 +38,7 @@ public class LoadingScreenRenderer {
     private final int scaleFactor;
 
     private final TextureManager textureManager;
-    private final FontRenderer fontRenderer;
+    private FontRenderer fontRenderer;
     private final Framebuffer framebuffer;
     private final Minecraft minecraft;
 
@@ -78,6 +78,10 @@ public class LoadingScreenRenderer {
     }
 
     public void draw() {
+        if(fontRenderer == null)
+            fontRenderer = minecraft.fontRendererObj;   // if it's null for some reason, set it to not null
+                                                        // y'know, just an idea
+
         final int imageWidth = 256;
         final int imageHeight = 256;
 
@@ -157,20 +161,22 @@ public class LoadingScreenRenderer {
             else currentStatus = status != null ? status : "Starting Minecraft";
         }
 
-        final int stringWidth = this.fontRenderer.getStringWidth(currentStatus);
-        final float textX = (float) (displayWidth / this.scaleFactor) / 2 - (float) stringWidth / 2;
-        final float textY = (float) (displayHeight / this.scaleFactor) - 20;
+        if(fontRenderer != null) {  // for if it's still null, for some reason
+            final int stringWidth = this.fontRenderer.getStringWidth(currentStatus);
+            final float textX = (float) (displayWidth / this.scaleFactor) / 2 - (float) stringWidth / 2;
+            final float textY = (float) (displayHeight / this.scaleFactor) - 20;
 
-        this.fontRenderer.drawString(currentStatus,
-                textX,
-                textY,
-                0,
-                false);
-        this.fontRenderer.drawString(spinnerAnimation[(frame / 10) % spinnerAnimation.length],
-                textX + stringWidth + 10,
-                textY,
-                0,
-                false);
+            this.fontRenderer.drawString(currentStatus,
+                    textX,
+                    textY,
+                    0,
+                    false);
+            this.fontRenderer.drawString(spinnerAnimation[(frame / 10) % spinnerAnimation.length],
+                    textX + stringWidth + 10,
+                    textY,
+                    0,
+                    false);
+        }
 
         this.minecraft.updateDisplay();
 
